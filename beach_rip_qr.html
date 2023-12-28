@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>강원동해안 피서객 안전 지원 기상정보</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="강원동해안 피서객 안전 지원 기상정보">
+    <meta property="og:description" content="강원동해안 피서객 안전 지원 기상정보">
+    <meta property="og:image" content="https://www.weather.go.kr/w/iphone-shortcut.png">
+    <meta-data android:name="android.max_aspect" android:value="2.1" />
+
+
+    <script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+     }
+	    
+    function getFormatDate(date){
+    	var year = date.getFullYear();              //yyyy
+    	var month = (1 + date.getMonth());          //M
+    	month = month >= 10 ? month : '0' + month;  //month 두자리로 저장
+    	var day = date.getDate();                   //d
+    	day = day >= 10 ? day : '0' + day;          //day 두자리로 저장
+    	return  year + '' + month + '' + day;       //'-' 추가하여 yyyy-mm-dd 형태 생성 가능
+     }
+	    
+	    
+    var weather = document.getElementById("weather");
+    var dong = getParameterByName('dong'); // 
+    var stn = getParameterByName('stn'); // 
+    //alert("https://www.weather.go.kr/w/index.do#dong/"+dong);
+    //var url ="https://www.weather.go.kr/w/index.do#dong/"+dong;
+
+    function url() {
+  	location.href="https://www.weather.go.kr/special/CRP/beach/rpt_beach_"+dong+".html";
+     }
+	    
+    function url_rip() {
+	var today = new Date();
+	var yesterday = new Date(today.setDate(today.getDate() - 1));
+	var yyyymmdd = getFormatDate(yesterday);
+  	location.href="https://www.weather.go.kr/w/repositary/image/cht/img2/ripcurrent_"+stn+"_"+yyyymmdd+"12.html";
+     }	    
+    
+    </script>
+</head>
+
+
+<body id="top" bgcolor="#EAF9FA">
+	<header>
+		<img src="./images/beach_title.png" style="width:100%; border:0px;">
+	</header>
+
+
+	<div class="page-content">
+		<a href="JavaScript:url()">
+		   <img src="./images/beach_weather.png" style="width: 40%; border:2%; float:left; margin-top: 15px; margin-left: 90px;">
+		</a>
+		
+		<a href="https://www.weather.go.kr/w/weather/warning/impact.do?stn=105">
+		   <img src="./images/heat_effect.png" style="width: 40%; border:2%; float:right; margin-top: 15px; margin-right: 50px;">
+		</a>
+	</div>
+	
+		<img src="./images/space.png" style="width:100%; border:0px;">
+	
+	
+	<div>
+
+		<a href="JavaScript:url_rip()">
+  		   <img src="./images/rip.png" style="width: 40%; border:2%; float:left; margin-left: 90px;">
+		</a>
+
+		
+		<a href="https://www.weather.go.kr/w/theme/daily-life/life-weather-index.do">
+		   <img src="./images/uv_rip.png" style="width: 40%; border:2%; float:right; margin-right: 50px;">
+		</a>
+				
+	</div>	
+	
+		
+</body>
+	<img src="./images/tail_rip.png" style="width:100%; border:0px;">
+
+</html>

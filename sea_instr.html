@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>수산업 분야 맞춤형 영향정보 서비스</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="수산업 분야 맞춤형 영향정보 서비스">
+    <meta property="og:description" content="수산업 분야 맞춤형 영향정보 서비스">
+    <meta property="og:image" content="https://www.weather.go.kr/w/iphone-shortcut.png">
+    <meta-data android:name="android.max_aspect" android:value="2.1" />
+
+
+    <script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+     }
+	    
+
+    var weather = document.getElementById("weather");
+    var dong = getParameterByName('dong'); // 4211065000
+    //alert("https://www.weather.go.kr/w/index.do#dong/"+dong);
+    //var url ="https://www.weather.go.kr/w/index.do#dong/"+dong;
+
+    function url() {
+	location.href="https://www.weather.go.kr/w/index.do#dong/"+dong;
+     }
+    
+    </script>
+</head>
+
+<body id="top">
+	<header>
+		<img src="./images/title_fish_ins.png" style="width:100%; border:0px;">
+	</header>
+
+
+	<div class="page-content">
+		<a href="JavaScript:url()">
+			<img src="./images/weather_info.png" style="width:49%; border:0.5%; float:left; margin-right:2%;">
+		</a>
+		
+		<a href="https://www.weather.go.kr/w/weather/warning/impact.do?stn=105">
+			<img src="./images/impact_forecast.png" style="width:49%; border:0.5%; float:left;">
+		</a>
+
+                        <a href="https://marine.kma.go.kr/mobile/m/main.html">
+			<img src="./images/sea_forecast.png" style="width: 25%; border:2%; float:left; margin-top: 15px; margin-bottom: 20px;">      
+	            </a>
+       
+                        <a href="http://www.khoa.go.kr/oceangrid/gis/category/observe/observeSearch.do">
+			<img src="./images/sea_level.png" style="width: 25%; border:2%; float:left; margin-top: 15px; margin-bottom: 20px;">      
+	            </a>
+
+                        <a href="https://www.nifs.go.kr/risa/main.risa">
+			<img src="./images/sea_temp.png" style="width: 25%; border:2%; float:left; margin-top: 15px; margin-bottom: 20px;">      
+	            </a>
+
+                        <a href="https://www.nifs.go.kr/dokdo/bbs?id=wforecast">
+			<img src="./images/field_forecast.png" style="width: 25%; border:2%; float:left; margin-top: 15px; margin-bottom: 20px;">      
+	            </a>
+		
+	       	    <a href="./images/act_fish.png">
+             	       <img src="./images/action_fish.png" style="width:100%; float:left;">
+    		    </a>
+	
+		    <a href="https://naver.me/xBp9Gwxk">
+             	       <img src="./images/survey.png" style="width:100%; float:left; margin-top: 20px;">
+    		    </a>
+
+
+	</div>
+</body>
+
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>폭염대비 안전 기상정보</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="viewport" content="width=1551">
+    <meta property="og:title" content="기상청 폭염대비 안전 기상정보">
+    <meta property="og:description" content="기상청 폭염대비 안전 기상정보">
+    <meta property="og:image" content="https://www.weather.go.kr/w/iphone-shortcut.png">
+
+    <script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+     }
+	    
+
+    var weather = document.getElementById("weather");
+    var dong = getParameterByName('dong'); // 4211065000
+    //alert("https://www.weather.go.kr/w/index.do#dong/"+dong);
+    //var url ="https://www.weather.go.kr/w/index.do#dong/"+dong;
+
+    function url() {
+	location.href="https://www.weather.go.kr/w/index.do#dong/"+dong;
+     }
+    
+    </script>
+</head>
+
+
+<body id="top">
+	<header>
+		<img src="images/heat_title.png" style="width:99%; border:0px;">
+	</header>
+
+
+	<div class="page-content">
+		<a href="JavaScript:url()">
+			<img src="images/weather.png" style="width:49%; border:20px; float:left; margin-right:20px;">
+		</a>
+		
+		<a href="https://www.weather.go.kr/w/weather/warning/impact.do?stn=105">
+			<img src="images/heat_impact.png" style="width:49%; border:20px; float:left;">
+		</a>
+	</div>
+</body>
+
+
+</html>
